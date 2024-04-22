@@ -53,24 +53,12 @@ function setBaseToImage(){
     const ctx = canvas.getContext('2d');
 
     const image = new Image();
-    image.src = base64Image;
-
-    image.onload = () => {
-    canvas.width = image.width;
-    canvas.height = image.height;
-
-    ctx.drawImage(image, 0, 0);
-
-    // แสดงรูปภาพ
-    const imgData = canvas.toDataURL('image/jpeg');
-    // const imgElement = document.createElement('img');
-    // imgElement.src = imgData;
-    // document.body.appendChild(imgElement);
-
-    // บันทึกลงในระบบไฟล์
-    // const data = canvas.toDataURL('image/jpeg').replace(/^data:image\/jpeg;base64,/, '');
-    // const fs = require('fs');
-    // fs.writeFileSync('image.jpg', data, 'base64');
+        image.src = base64Image;
+    
+        image.onload = () => {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
     };
 
 }
